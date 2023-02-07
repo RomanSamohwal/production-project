@@ -5,6 +5,7 @@ export interface BuildPaths {
     entry: string;
     build: string;
     html: string;
+    src: string;
 }
 
 export interface BuildEnv {
@@ -18,3 +19,4 @@ export interface BuildOptions {
     isDev: boolean;
     port: number;
 }
+
