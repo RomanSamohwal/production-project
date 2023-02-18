@@ -1,4 +1,5 @@
 import type { Config } from 'jest';
+import path from 'path';
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
@@ -39,14 +40,13 @@ const config: Config = {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        // '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
     // An array of glob patterns indicating a set of files for which coverage information should be collected
     // collectCoverageFrom: undefined,
-
     // The directory where Jest should output its coverage files
     // coverageDirectory: undefined,
 
