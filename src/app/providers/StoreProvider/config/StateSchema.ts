@@ -12,13 +12,15 @@ import {
 import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'entities/Profile';
 import { NavigateOptions } from 'react-router';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateSchema {
      counter: CounterSchema;
      user: UserSchema;
      // Асинхронные редюсеры
      loginForm?: LoginSchema;
-     profile?: ProfileSchema
+     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
