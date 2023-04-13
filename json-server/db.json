@@ -102,6 +102,12 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "adadada",
+      "id": "w0fhPEv"
     }
   ],
   "users": [
@@ -120,14 +126,28 @@
       "avatar": "https://w35sr6r2cw.cloudcdn.info/files/2021/07/1280px-hacker-3342696_1920-1024x788-kopiya-758x505.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://w35sr6r2cw.cloudcdn.info/files/2021/07/1280px-hacker-3342696_1920-1024x788-kopiya-758x505.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://w35sr6r2cw.cloudcdn.info/files/2021/07/1280px-hacker-3342696_1920-1024x788-kopiya-758x505.jpg"
+    },
+    {
+      "id": "2",
+      "first": "ulbi tv",
+      "lastname": "asf",
+      "age": 24,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "ulbi tv",
+      "avatar": "https://w35sr6r2cw.cloudcdn.info/files/2021/07/1280px-hacker-3342696_1920-1024x788-kopiya-758x505.jpg"
+    }
+  ]
 }
