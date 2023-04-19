@@ -55,12 +55,8 @@ export const Input = memo((props: InputProps) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
 
-    const mods: Mods = {
-        [cls.readonly]: readonly,
-    };
-
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+        <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {`${placeholder}>`}
