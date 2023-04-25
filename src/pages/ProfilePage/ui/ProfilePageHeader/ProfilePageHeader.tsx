@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData } from '../../../../entities/User';
 import {
     getProfileData,
     getProfileReadonly,
