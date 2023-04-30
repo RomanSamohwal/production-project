@@ -5,7 +5,7 @@
     // Однако это не означает, что теперь вовсе нельзя использовать any.
     // Это означает лишь, что в подобных ситуация разработчик должен явно писать any,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "ESNext",
     // В какую спецификацию компилируем: для поддержки большинства браузеров
     "target": "es5",
     "jsx": "react-jsx",
@@ -24,6 +24,7 @@
     // без флага esModuleInterop результат undefined
     // console.log(Moment);
     // c флагом результат [object Object]
+    // console.log(Moment);
     // console.log(Moment);
     "esModuleInterop": true,
     // Если какая-либо библиотека не имеет default import,
