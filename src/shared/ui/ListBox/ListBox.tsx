@@ -69,7 +69,7 @@ export function ListBox(props: ListBoxProps) {
                         >
                             {({
                                 active,
-                                selected
+                                selected,
                             }) => (
                                 <li
                                     className={classNames(
