@@ -7,13 +7,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { userActions } from '../../../entities/User';
-import {
-    getUserAuthData
-} from '../../../entities/User/model/selectors/getUserAuthData/getUserAuthData';
-import cls from './Navbar.module.scss';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { isUserAdmin, isUserManager, userActions } from '../../../entities/User';
+import {
+    getUserAuthData,
+} from '../../../entities/User/model/selectors/getUserAuthData/getUserAuthData';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
@@ -21,6 +21,8 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
     const [isAuthModal, setIsAuthModal] = useState(false);
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
@@ -36,6 +38,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (authData) {
         return (
@@ -56,6 +60,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     direction="bottom left"
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable ? [{
+                            content: t('Админка'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
+
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,
@@ -65,7 +74,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             onClick: onLogout,
                         },
                     ]}
-                    trigger={<Avatar size={30} src={authData.avatar}/>}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
                 />
             </header>
         );

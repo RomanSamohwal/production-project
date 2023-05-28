@@ -34,6 +34,9 @@ const config: Config = {
         'json',
         'node',
     ],
+    moduleDirectories: [
+        'node_modules',
+    ],
     modulePaths: [
         '<rootDir>src',
     ],
@@ -47,6 +50,15 @@ const config: Config = {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
+    reporters: [
+        'default',
+        ['./node_modules/jest-html-reporter', {
+            outputPath: '<rootDir>/reports/test-report.html',
+            pageTitle: 'Test Report',
+            filename: 'report.html',
+            openReport: true,
+        }],
+    ],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
