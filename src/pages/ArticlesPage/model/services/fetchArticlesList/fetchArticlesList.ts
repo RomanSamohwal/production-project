@@ -10,7 +10,8 @@ import {
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
 import { Article } from '../../../../../entities/Article';
-import { ArticleType } from '../../../../../entities/Article/model/types/article';
+
+import { ArticleType } from 'entities/Article/model/consts/articleConsts';
 
 interface FetchArticlesListProps {
     replace?: boolean;

@@ -25,7 +25,7 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
-import { ArticleType } from '../../../../entities/Article/model/types/article';
+import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
 
 interface ArticlesPageFiltersProps {
     className?: string;
