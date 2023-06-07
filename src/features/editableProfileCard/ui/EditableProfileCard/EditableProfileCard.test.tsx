@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import userEvent from '@testing-library/user-event';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
 import { Currency } from '../../../../entities/Currency';
 import { Profile } from '../../../../entities/Profile';
 import { Country } from '../../../../entities/Country';
