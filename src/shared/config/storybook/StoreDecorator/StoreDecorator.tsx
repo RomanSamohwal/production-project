@@ -6,7 +6,7 @@ import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slic
 import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
 import {
     articleDetailsReducer,
-} from '../../../../entities/Article/model/slice/articleDetailsSlice';
+} from '@/entities/Article/model/slice/articleDetailsSlice';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
