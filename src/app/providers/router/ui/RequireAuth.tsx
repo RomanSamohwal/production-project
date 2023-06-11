@@ -1,16 +1,20 @@
 import { useSelector } from 'react-redux';
-import { getUserAuthData, getUserRoles } from '@/entities/User';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useMemo } from 'react';
+import { getUserAuthData, getUserRoles } from '@/entities/User';
 import { UserRole } from '@/entities/User/model/consts/userConsts';
+
+import { RoutePath } from '@/shared/config/routeConfig/routePath';
 
 interface RequireAuthProps {
     children: JSX.Element;
     roles?: UserRole[];
 }
 
-export function RequireAuth({ children, roles }: RequireAuthProps) {
+export function RequireAuth({
+    children,
+    roles,
+}: RequireAuthProps) {
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
     const userRoles = useSelector(getUserRoles);
