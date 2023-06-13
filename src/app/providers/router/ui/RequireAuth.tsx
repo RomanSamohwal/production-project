@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { getUserAuthData, getUserRoles } from '@/entities/User';
 import { UserRole } from '@/entities/User/model/consts/userConsts';
 
-import { RoutePath } from '@/shared/config/routeConfig/routePath';
+import { RoutePath } from '@/shared/const/router';
 
 interface RequireAuthProps {
     children: JSX.Element;

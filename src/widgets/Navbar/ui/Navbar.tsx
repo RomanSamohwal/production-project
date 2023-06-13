@@ -14,7 +14,7 @@ import {
 } from '@/entities/User/model/selectors/getUserAuthData/getUserAuthData';
 import cls from './Navbar.module.scss';
 
-import { RoutePath } from '@/shared/config/routeConfig/routePath';
+import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;

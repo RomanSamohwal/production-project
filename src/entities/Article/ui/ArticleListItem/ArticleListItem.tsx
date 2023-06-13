@@ -17,7 +17,7 @@ import {
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 
-import { RoutePath } from '@/shared/config/routeConfig/routePath';
+import { RoutePath } from '@/shared/const/router';
 
 interface ArticleListItemProps {
     className?: string;

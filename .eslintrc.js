@@ -57,10 +57,15 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'roman-fsd-plugin/path-checker': ['error', { alias: '@' }],
+        'roman-fsd-plugin/layer-import': ['error', {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+        }],
         'roman-fsd-plugin/public-api-imports': ['error', {
             alias: '@',
             testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
         }],
+
     },
     globals: {
         __IS_DEV__: true,

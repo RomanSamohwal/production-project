@@ -1,3 +1,4 @@
+import { RouteProps } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
@@ -7,9 +8,8 @@ import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
-import { UserRole } from '@/entities/User/model/consts/userConsts';
-import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routePath';
-import { RouteProps } from 'react-router-dom';
+import { UserRole } from '@/entities/User';
+import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
