@@ -1,7 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/Text';
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text';
 import { ArticleTextBlock } from '../../../Article/model/types/article';
 import cls from './ArticleTextBlockComponent.module.scss';
 

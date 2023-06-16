@@ -1,9 +1,9 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
-import { memo, useCallback } from 'react';
-import { useSelector, useStore } from 'react-redux';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import {
     DynamicModuleLoader,

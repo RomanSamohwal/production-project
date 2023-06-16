@@ -1,6 +1,3 @@
-import { CounterSchema } from '@/entities/Counter';
-import { UserSchema } from '@/entities/User';
-import { LoginSchema } from '@/features/AuthByUsername';
 import {
     AnyAction,
     CombinedState,
@@ -9,6 +6,9 @@ import {
     ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUsername';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
