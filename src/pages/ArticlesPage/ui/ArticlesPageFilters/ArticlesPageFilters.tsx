@@ -8,14 +8,10 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { Input } from '@/shared/ui/Input';
 import { Card } from '@/shared/ui/Card';
 import {
-    fetchArticlesList,
-} from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import {
     ArticleSortField,
-    ArticleSortSelector, ArticleTypeTabs,
+    ArticleType,
     ArticleView,
-    ArticleViewSelector,
-} from '../../../../entities/Article';
+} from '@/entities/Article';
 import cls from './ArticlesPageFilters.module.scss';
 import {
     getArticlesPageOrder,
@@ -25,7 +21,12 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
-import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import {
+    fetchArticlesList,
+} from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/pages/ArticleViewSelector';
 
 interface ArticlesPageFiltersProps {
     className?: string;
