@@ -3,7 +3,6 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { SortOrder } from '@/shared/types';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { Input } from '@/shared/ui/Input';
 import { Card } from '@/shared/ui/Card';
@@ -27,6 +26,7 @@ import {
 } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ArticleViewSelector } from '@/pages/ArticleViewSelector';
+import { SortOrder } from '@/shared/types/sort';
 
 interface ArticlesPageFiltersProps {
     className?: string;

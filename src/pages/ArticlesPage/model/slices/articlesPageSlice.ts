@@ -4,10 +4,10 @@ import {
     fetchArticlesList,
 } from '@/pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
-import { SortOrder } from '@/shared/types';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { Article, ArticleSortField, ArticleView } from '../../../../entities/Article';
 import { ArticleType } from '../../../../entities/Article/model/consts/articleConsts';
+import { SortOrder } from '@/shared/types/sort';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
