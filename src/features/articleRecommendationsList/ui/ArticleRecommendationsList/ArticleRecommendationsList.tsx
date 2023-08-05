@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text';
-import { ArticleList } from '../../../../entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useArticleRecommendationsList } from '../../api/aritcleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
@@ -13,14 +13,22 @@ interface ArticleRecommendationsListProps {
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation();
-    const { isLoading, data: articles, error } = useArticleRecommendationsList(3);
+    const {
+        isLoading,
+        data: articles,
+        error,
+    } = useArticleRecommendationsList(3);
 
     if (isLoading || error || !articles) {
         return null;
     }
 
     return (
-        <VStack gap="8" className={classNames('', {}, [className])}>
+        <VStack
+            gap="8"
+            data-testid="ArticleRecommendationsList"
+            className={classNames('', {}, [className])}
+        >
             <Text
                 size={TextSize.L}
                 title={t('Рекомендуем')}
