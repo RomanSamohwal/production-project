@@ -16,7 +16,8 @@ import {
     getRouteArticleCreate,
     getRouteArticleDetails,
     getRouteArticleEdit,
-    getRouteArticles, getRouteForbidden,
+    getRouteArticles,
+    getRouteForbidden,
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';
@@ -24,7 +25,7 @@ import {
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
     roles?: UserRole[];
-}
+};
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),

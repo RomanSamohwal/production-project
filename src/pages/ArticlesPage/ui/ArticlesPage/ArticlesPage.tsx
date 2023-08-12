@@ -10,9 +10,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { Page } from '@/widgets/Page';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import {
-    fetchNextArticlesPage,
-} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import cls from './ArticlesPage.module.scss';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';

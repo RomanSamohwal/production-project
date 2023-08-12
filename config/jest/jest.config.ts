@@ -23,23 +23,10 @@ const config: Config = {
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
     testEnvironment: 'jsdom',
-    coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\',
-    ],
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
-    moduleDirectories: [
-        'node_modules',
-    ],
-    modulePaths: [
-        '<rootDir>src',
-    ],
+    coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    moduleDirectories: ['node_modules'],
+    modulePaths: ['<rootDir>src'],
     testMatch: [
         // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
@@ -53,12 +40,15 @@ const config: Config = {
     },
     reporters: [
         'default',
-        ['./node_modules/jest-html-reporter', {
-            outputPath: '<rootDir>/reports/test-report.html',
-            pageTitle: 'Test Report',
-            filename: 'report.html',
-            openReport: true,
-        }],
+        [
+            './node_modules/jest-html-reporter',
+            {
+                outputPath: '<rootDir>/reports/test-report.html',
+                pageTitle: 'Test Report',
+                filename: 'report.html',
+                openReport: true,
+            },
+        ],
     ],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

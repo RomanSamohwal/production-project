@@ -9,9 +9,7 @@ import {
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
-import {
-    ArticleDetailsComments,
-} from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetails } from '@/entities/Article';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
@@ -37,7 +35,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />

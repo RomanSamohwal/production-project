@@ -4,9 +4,7 @@ import { loginReducer } from '@/features/AuthByUsername/testing';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
-import {
-    articleDetailsReducer,
-} from '@/entities/Article/testing';
+import { articleDetailsReducer } from '@/entities/Article/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
@@ -15,14 +13,13 @@ const defaultAsyncReducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
 };
 
-export const StoreDecorator = (
-    state: DeepPartial<StateSchema>,
-    asyncReducers?: ReducersList,
-) => (StoryComponent: Story) => (
-    <StoreProvider
-        initialState={state}
-        asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
-    >
-        <StoryComponent />
-    </StoreProvider>
-);
+export const StoreDecorator =
+    (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+    (StoryComponent: Story) => (
+        <StoreProvider
+            initialState={state}
+            asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+        >
+            <StoryComponent />
+        </StoreProvider>
+    );

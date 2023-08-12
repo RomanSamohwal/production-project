@@ -6,12 +6,11 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 declare module 'i18next' {
     interface CustomTypeOptions {
-        returnNull: false
+        returnNull: false;
     }
 }
 
-i18n
-    .use(Backend)
+i18n.use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
