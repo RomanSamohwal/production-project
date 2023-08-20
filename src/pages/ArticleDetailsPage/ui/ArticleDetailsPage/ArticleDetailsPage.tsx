@@ -15,6 +15,8 @@ import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRating } from '@/features/articleRating';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Counter } from '@/entities/Counter';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -33,6 +35,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         return null;
     }
 
+    const counter = toggleFeatures({
+        name: 'isCounterEnabled',
+        on: () => <div>CounterRedesigned</div>,
+        off: () => <Counter />,
+    });
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
@@ -44,6 +52,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
+                    {/* {counter} */}
                 </VStack>
             </Page>
         </DynamicModuleLoader>

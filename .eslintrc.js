@@ -28,6 +28,7 @@ module.exports = {
         'unused-imports',
     ],
     rules: {
+        'react/no-unstable-nested-components': 'warn',
         'unused-imports/no-unused-imports': 'error',
         'react/jsx-filename-extension': [
             2,
@@ -100,6 +101,7 @@ module.exports = {
                 ],
             },
         ],
+
     },
     globals: {
         __IS_DEV__: true,
