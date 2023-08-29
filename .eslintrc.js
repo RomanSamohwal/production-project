@@ -62,6 +62,7 @@ module.exports = {
                     'border',
                     'direction',
                     'gap',
+                    'feature',
                 ],
             },
         ],
@@ -101,7 +102,6 @@ module.exports = {
                 ],
             },
         ],
-
     },
     globals: {
         __IS_DEV__: true,
