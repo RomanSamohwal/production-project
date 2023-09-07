@@ -9,7 +9,7 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { MainLayout } from '@/shared/layouts';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 function App() {
     const { theme } = useTheme();
