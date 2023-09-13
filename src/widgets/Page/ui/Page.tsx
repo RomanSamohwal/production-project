@@ -24,13 +24,18 @@ export const Page = memo((props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
+
     const scrollPosition = useSelector((state: StateSchema) =>
         getUIScrollByPath(state, pathname),
     );
 
     useInfiniteScroll({
         triggerRef,
-        wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 
