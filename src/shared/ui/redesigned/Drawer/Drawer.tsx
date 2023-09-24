@@ -1,13 +1,14 @@
 import React, { memo, ReactNode, useCallback, useEffect } from 'react';
-import { classNames } from '../../../lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AnimationProvider,
     useAnimationLibs,
-} from '../../../lib/components/AnimationProvider';
-import { Overlay } from '../../redesigned/Overlay';
+} from '@/shared/lib/components/AnimationProvider';
+import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
-import { Portal } from '../../redesigned/Portal/Portal';
+import { Portal } from '../Portal/Portal';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
     className?: string;
@@ -18,7 +19,9 @@ interface DrawerProps {
 }
 
 const height = window.innerHeight - 100;
+
 /**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 export const DrawerContent = memo((props: DrawerProps) => {
@@ -28,10 +31,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     const { className, children, onClose, isOpen, lazy } = props;
 
     const openDrawer = useCallback(() => {
-        api.start({
-            y: 0,
-            immediate: false,
-        });
+        api.start({ y: 0, immediate: false });
     }, [api]);
 
     useEffect(() => {
@@ -44,10 +44,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
         api.start({
             y: height,
             immediate: false,
-            config: {
-                ...Spring.config.stiff,
-                velocity,
-            },
+            config: { ...Spring.config.stiff, velocity },
             onResolve: onClose,
         });
     };
@@ -69,10 +66,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
                     openDrawer();
                 }
             } else {
-                api.start({
-                    y: my,
-                    immediate: true,
-                });
+                api.start({ y: my, immediate: true });
             }
         },
         {
@@ -90,12 +84,17 @@ export const DrawerContent = memo((props: DrawerProps) => {
     const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.Drawer, {}, [
                     className,
                     theme,
                     'app_drawer',
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.drawerNew,
+                        off: () => cls.drawerOld,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />
@@ -125,6 +124,10 @@ const DrawerAsync = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
+/**
+ * Устарел, используем новые компоненты из папки redesigned
+ * @deprecated
+ */
 export const Drawer = (props: DrawerProps) => {
     return (
         <AnimationProvider>
