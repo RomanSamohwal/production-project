@@ -22,9 +22,9 @@ root.render(
         <StoreProvider>
             <ErrorBoundary>
                 <ForceUpdateProvider>
-                    <ThemeProvider>
-                        <App />
-                    </ThemeProvider>
+                    {/* <ThemeProvider> */}
+                    <App />
+                    {/* </ThemeProvider> */}
                 </ForceUpdateProvider>
             </ErrorBoundary>
         </StoreProvider>
